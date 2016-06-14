@@ -40,13 +40,16 @@ exports.mostPopular = function(dataToArray) {
 };
 
 exports.leastPopular = function(dataToArray) {
-  var max = infinity;
+  var max = Infinity;
   var leastProduct = "";
+
   dataToArray.forEach(function(user) {
     if (user.sold < max) {
       max = user.sold;
       leastProduct = user.products;
     }
   })
-//
-// };
+  return leastProduct;
+  console.log(leastProduct);
+
+};
