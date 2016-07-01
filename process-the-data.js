@@ -1,21 +1,41 @@
 // most popular products.
-// var 
-exports.mostPopular = function(filepath) {
+exports.mostPopular = function(listMap) {
 
-  var min = 0;
-  var mostProduct = "";
+  var max = 0;
+  var mostPopProduct = {};
 
-  filepath.forEach(function(user) {
-    if (user.sold > min) {
-      min = user.sold;
-      mostProduct = user.products;
-      //most = user.pPrice;
+  for (var key in listMap) {
+
+    if (listMap[key] > max) {
+      max = listMap[key];
+
+      // var popularWk1 = {
+      //   'Coke 500ml': 54
+      // };
+
+      mostPopProduct = mostPopProduct += listMap[key];
     }
-  })
- console.log(mostProduct);
-  return mostProduct;
+  }
+
+  console.log(mostPopProduct);
+  return mostPopProduct;
 };
 
+// exports.mostPopularProd = function(productMap){
+// 		var mostPopularProduct = {};
+// 		var max = 0;
+// 		for(key in productMap){
+// 			if(productMap[key] > max){
+// 				max = productMap[key];
+//
+// 				mostPopularProduct = {
+// 					product : key,
+// 					quantity: max
+// 				};
+// 			}
+// 		}
+// 		return mostPopularProduct;
+// }
 // exports.mostPopular = function(dataToArray) {
 //
 //   var min = 0;
@@ -30,23 +50,4 @@ exports.mostPopular = function(filepath) {
 //   })
 //  // console.log(mostProduct);
 //   return mostProduct;
-// };
-
-
-// least popular products.
-// exports.leastPopular = function(productMaps) {
-//   var min = 54;
-//   var leastProduct = "";
-//
-//   productMaps.forEach(function(user) {
-//     if (user.sold < min) {
-//       min = user.sold;
-//       leastProduct = {
-//         item : user.products,
-//         amount : min
-//       }
-//     }
-//   });
-//   console.log(leastProduct);
-//   return leastProduct;
 // };

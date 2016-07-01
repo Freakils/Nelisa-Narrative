@@ -110,9 +110,11 @@ describe("most popular product each week", function() {
       'Apples - loose': 36,
       'Mixed Sweets 5s': 49
     };
-    var pop = 'Mixed Sweets 5s';
+    var popularWk1 = {
+      'Coke 500ml': 54
+    };
 
-    assert.equal(processTheData.mostPopular(weekOne, arrayMap.csv("./data-files/week1.csv")), pop);
+    assert.deepEqual(processTheData.mostPopular(weekOne), popularWk1);
   })
 
   //   it("should return the most popular products in week2", function() {
