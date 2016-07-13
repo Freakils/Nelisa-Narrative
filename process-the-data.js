@@ -20,7 +20,20 @@ exports.mostPopular = function(listMap) {
   return mostPopProduct;
 };
 
-exports.leastPopular = functtion(){
+exports.leastPopular = function(listMap){
 
+  var min = Infinity;
+  var leastPopProduct = {};
 
+  for (var key in listMap){
+    if(listMap[key] < min){
+      min = listMap[key];
+
+      leastPopProduct = {
+        item: key,
+        qty: min
+      };
+    }
+  }
+  return leastPopProduct;
 };
