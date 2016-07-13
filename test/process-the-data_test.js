@@ -110,28 +110,102 @@ describe("most popular product each week", function() {
       'Apples - loose': 36,
       'Mixed Sweets 5s': 49
     };
+
     var popularWk1 = {
-      'Coke 500ml': 54
+      item: 'Coke 500ml',
+      qty: 54
     };
 
     assert.deepEqual(processTheData.mostPopular(weekOne), popularWk1);
   })
 
-  //   it("should return the most popular products in week2", function() {
-  //     var weekList = arrayMap.csv("./data-files/week2.csv")
-  //     assert.equal(processTheData.mostPopular(weekList), "Mixed Sweets 5s")
-  //   })
-  //
-  //   it("should return the most popular products in week3", function() {
-  //     var weekList = arrayMap.csv("./data-files/week3.csv")
-  //     assert.equal(processTheData.mostPopular(weekList), "Milk 1l")
-  //   })
-  //
-  //   it("should return the most popular products in week4", function() {
-  //     var weekList = arrayMap.csv("./data-files/week4.csv")
-  //     assert.equal(processTheData.mostPopular(weekList), "Coke 500ml")
-  //   })
-  //
+  it("should return the most popular products in week2", function() {
+
+    var weekTwo = {
+      'Imasi': 36,
+      'Bread': 28,
+      'Chakalaka Can': 21,
+      'Gold Dish Vegetable Curry Can': 27,
+      'Fanta 500ml': 23,
+      'Coke 500ml': 42,
+      'Cream Soda 500ml': 22,
+      'Iwisa Pap 5kg': 10,
+      'Top Class Soy Mince': 21,
+      'Shampoo 1 litre': 6,
+      'Soap Bar': 5,
+      'Bananas - loose': 28,
+      'Apples - loose': 21,
+      'Mixed Sweets 5s': 54,
+      'Milk 1l': 28,
+      'Heart Chocolates': 20,
+      'Rose (plastic)': 14,
+      'Valentine Cards': 14
+    };
+
+    var popularWk2 = {
+      item: 'Mixed Sweets 5s',
+      qty: 54
+    };
+
+    assert.deepEqual(processTheData.mostPopular(weekTwo), popularWk2)
+  })
+
+  it("should return the most popular products in week3", function() {
+
+    var weekThree = {
+      'Imasi': 25,
+      'Bread': 24,
+      'Chakalaka Can': 17,
+      'Gold Dish Vegetable Curry Can': 8,
+      'Fanta 500ml': 14,
+      'Coke 500ml': 18,
+      'Cream Soda 500ml': 12,
+      'Iwisa Pap 5kg': 4,
+      'Top Class Soy Mince': 12,
+      'Shampoo 1 litre': 4,
+      'Soap Bar': 8,
+      'Bananas - loose': 17,
+      'Apples - loose': 25,
+      'Mixed Sweets 5s': 29,
+      'Milk 1l': 28
+    };
+
+    var popularWk3 = {
+      item: 'Mixed Sweets 5s',
+      qty: 29
+    };
+
+    assert.deepEqual(processTheData.mostPopular(weekThree), popularWk3)
+  })
+
+  it("should return the most popular products in week4", function() {
+
+    var weekFour = {
+      'Imasi': 34,
+      'Bread': 33,
+      'Chakalaka Can': 33,
+      'Gold Dish Vegetable Curry Can': 34,
+      'Fanta 500ml': 24,
+      'Coke 500ml': 45,
+      'Cream Soda 500ml': 19,
+      'Iwisa Pap 5kg': 16,
+      'Top Class Soy Mince': 43,
+      'Shampoo 1 litre': 13,
+      'Soap Bar': 25,
+      'Bananas - loose': 22,
+      'Apples - loose': 32,
+      'Mixed Sweets 5s': 40,
+      'Milk 1l': 43
+    };
+
+    var popularWk4 = {
+      item: 'Coke 500ml',
+      qty: 45
+    };
+
+    assert.deepEqual(processTheData.mostPopular(weekFour), popularWk4)
+  })
+
 });
 
 // least popular products.
