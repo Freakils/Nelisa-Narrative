@@ -20,6 +20,7 @@ var productsCategories = {
   'Mixed Sweets 5s': 'Sweets'
 };
 
+// My maps.
 describe("mapped products each week", function() {
 
   it("return mapped products each week", function() {

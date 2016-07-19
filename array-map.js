@@ -1,6 +1,6 @@
 var fs = require("fs");
 
-// making an array.
+// creating an array.
 exports.csv = function(filepath) {
 
   var list = fs.readFileSync(filepath, "utf8");

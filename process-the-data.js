@@ -37,3 +37,6 @@ exports.leastPopular = function(listMap){
   }
   return leastPopProduct;
 };
+
+// most popular category.
+exports.populaCategory = function(){}
