@@ -2,6 +2,24 @@ var assert = require("assert");
 var arrayMap = require("../array-map");
 var processTheData = require("../process-the-data");
 
+var productsCategories = {
+  'Milk 1l': 'Dairy',
+  'Imasi': 'Dairy',
+  'Bread': 'Bakery',
+  'Chakalaka Can': 'Canned Foods',
+  'Gold Dish Vegetable Curry Can': 'Canned Foods',
+  'Fanta 500ml': 'Soft Drinks',
+  'Coke 500ml': 'Soft Drinks',
+  'Cream Soda 500ml': 'Soft Drinks',
+  'Iwisa Pap 5kg': 'Starch',
+  'Top Class Soy Mince': 'Meat',
+  'Shampoo 1 litre': 'Hygiene',
+  'Soap Bar': 'Hygiene',
+  'Bananas - loose': 'Fruits',
+  'Apples - loose': 'Fruits',
+  'Mixed Sweets 5s': 'Sweets'
+};
+
 describe("mapped products each week", function() {
 
   it("return mapped products each week", function() {
@@ -324,5 +342,26 @@ describe("least popular product each week", function() {
 
     assert.deepEqual(processTheData.leastPopular(weekFour), leastWk4)
   })
+
+});
+
+// Most popular category.
+describe("Most popular category", function() {
+
+  it("should return the most popular products in week1", function() {
+    assert.equal();
+  });
+
+  // it("should return the most popular products in week2", function() {
+  //   assert.equal()
+  // });
+  //
+  // it("should return the most popular products in week3", function() {
+  //   assert.equal();
+  // });
+  //
+  // it("should return the most popular products in week4", function() {
+  //   assert.equal();
+  // });
 
 });
