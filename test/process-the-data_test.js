@@ -350,7 +350,31 @@ describe("least popular product each week", function() {
 describe("Most popular category", function() {
 
   it("should return the most popular products in week1", function() {
-    assert.equal();
+
+    var weekOne = {
+      'Milk 1l': 39,
+      'Imasi': 30,
+      'Bread': 45,
+      'Chakalaka Can': 23,
+      'Gold Dish Vegetable Curry Can': 17,
+      'Fanta 500ml': 33,
+      'Coke 500ml': 54,
+      'Cream Soda 500ml': 22,
+      'Iwisa Pap 5kg': 17,
+      'Top Class Soy Mince': 22,
+      'Shampoo 1 litre': 3,
+      'Soap Bar': 12,
+      'Bananas - loose': 47,
+      'Apples - loose': 36,
+      'Mixed Sweets 5s': 49
+    };
+
+    var popularWk1 = {
+      catergory: 'Soft Drinks',
+      qty: 109
+    };
+
+    assert.deepEqual(processTheData.popularCategory(productsCategories), popularWk1);
   });
 
   // it("should return the most popular products in week2", function() {
