@@ -94,6 +94,7 @@ exports.popularCategory = function(listMap) {
   return mostPopularCategory;
 };
 
+// Least popular category.
 exports.leastCategory = function(listMap) {
 
   var mappedCat = {};
