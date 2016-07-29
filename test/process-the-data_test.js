@@ -565,3 +565,10 @@ describe("least popular category each week", function() {
   })
 
 });
+
+// Most profitable product for each week.
+describe("most profitable product each week", function(){
+
+  it("should return the most profitable product in week1")
+
+});
