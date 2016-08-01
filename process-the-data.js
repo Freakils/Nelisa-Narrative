@@ -20,6 +20,7 @@ exports.mostPopular = function(listMap) {
     return mostPopProduct;
 };
 
+// least popular products.
 exports.leastPopular = function(listMap) {
 
   var min = Infinity;

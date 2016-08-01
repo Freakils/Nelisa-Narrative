@@ -1,7 +1,7 @@
 var fs = require("fs");
 
 // creating an array.
-exports.csv = function(filepath) {
+exports.mappedWeeks = function(filepath) {
 
   var list = fs.readFileSync(filepath, "utf8");
 

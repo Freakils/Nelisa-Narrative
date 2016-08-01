@@ -83,10 +83,10 @@ describe("mapped products each week", function() {
       'Milk 1l': 43
     };
 
-    assert.deepEqual(weekOne, arrayMap.csv("./data-files/week1.csv"));
-    assert.deepEqual(weekTwo, arrayMap.csv("./data-files/week2.csv"));
-    assert.deepEqual(weekThree, arrayMap.csv("./data-files/week3.csv"));
-    assert.deepEqual(weekFour, arrayMap.csv("./data-files/week4.csv"));
+    assert.deepEqual(weekOne, arrayMap.mappedWeeks("./data-files/week1.csv"));
+    assert.deepEqual(weekTwo, arrayMap.mappedWeeks("./data-files/week2.csv"));
+    assert.deepEqual(weekThree, arrayMap.mappedWeeks("./data-files/week3.csv"));
+    assert.deepEqual(weekFour, arrayMap.mappedWeeks("./data-files/week4.csv"));
   })
 });
 
@@ -566,9 +566,9 @@ describe("least popular category each week", function() {
 
 });
 
-// Most profitable product for each week.
-describe("most profitable product each week", function(){
-
-  it("should return the most profitable product in week1")
-
-});
+// Mapped purchases.
+// describe("mapping purchases", function(){
+//
+//   it("should return mappe purchases")
+//
+// });
