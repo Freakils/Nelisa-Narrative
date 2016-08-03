@@ -1,6 +1,7 @@
 var assert = require("assert");
 var arrayMap = require("../array-map");
 var processTheData = require("../process-the-data");
+var mappedPurchases = require("../mapped-purchases");
 
 
 // My maps.
@@ -567,8 +568,12 @@ describe("least popular category each week", function() {
 });
 
 // Mapped purchases.
-// describe("mapping purchases", function(){
-//
-//   it("should return mappe purchases")
-//
-// });
+describe("mapping purchases", function(){
+
+  it("should return a split array of the purchases", function(){
+    assert.deepEqual(mappedPurchases.mappedPurchases("./data-files/purchases.csv"));
+  })
+
+  // it("should return the")
+
+});
