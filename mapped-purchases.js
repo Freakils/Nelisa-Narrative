@@ -1,7 +1,7 @@
 var fs = require("fs");
 
 // creating an array.
-exports.mappedPurchases = function(filepath) {
+exports.newLineSplit = function(filepath) {
 
   var purchasesList = fs.readFileSync(filepath, "utf8");
 
@@ -11,31 +11,31 @@ exports.mappedPurchases = function(filepath) {
     .filter(Boolean);
 
   console.log(newPurchasesList);
-};
-
-exports.arrayIndexes = function(){
 
   var dataToArray = [];
 
   for (var i = 0; i < newPurchasesList.length; i++) {
-    newList[i] = newList[i]
-      .split(',')
-      .splice(1);
+      newPurchasesList[i] = newPurchasesList[i]
+        .split(',')
+        .splice(1);
 
+        console.log(newPurchasesList[i][0]);
 
-    dataToArray.push({
+  //       dataToArray.push({
+  // //
+  //             shop: newPurchasesList[i][0],
+  //             date: newPurchasesList[i][1] + '-2016',
+  //             item: newPurchasesList[i][2],
+  //             quantity: Number(newPurchasesList[i][3]),
+  //             cost: Number(newPurchasesList[i][4].replace(/R/, '')),
+  //             totalCost: Number(newPurchasesList[i][5].replace(/R/, ''))
+  // //
+  //           })
+      }
+      // console.log(dataToArray);
 
-      shop: newList[0],
-      date: newList[i][1] + '-2016',
-      item: newList[i][2],
-      quantity: Number(newList[i][3]),
-      cost: Number(newList[i][4].replace(/R/, '')),
-      totalCost: Number(newList[i][5].replace(/R/, ''))
-
-    })
-}
 };
-//
+
 //   var productMap = {};
 //
 //   dataToArray.forEach(function(list) {

@@ -570,10 +570,9 @@ describe("least popular category each week", function() {
 // Mapped purchases.
 describe("mapping purchases", function(){
 
-  it("should return a split array of the purchases", function(){
-    assert.deepEqual(mappedPurchases.mappedPurchases("./data-files/purchases.csv"));
-  })
+  it("should return a new line split array of the purchases", function(){
 
-  // it("should return the")
+    assert.deepEqual(mappedPurchases.newLineSplit("./data-files/purchases.csv"));
+    })
 
 });
