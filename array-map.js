@@ -10,7 +10,7 @@ exports.mappedWeeks = function(filepath) {
     .splice(1)
     .filter(Boolean);
 
-    console.log(newList);
+    // console.log(newList);
 
 
   var dataToArray = [];
@@ -30,6 +30,7 @@ exports.mappedWeeks = function(filepath) {
 
     })
 }
+  // console.log(dataToArray);
 
   var productMap = {};
 
@@ -44,6 +45,6 @@ exports.mappedWeeks = function(filepath) {
     productMap[item] += qty;
   });
 
-  console.log(productMap);
+  // console.log(productMap);
   return productMap;
 };

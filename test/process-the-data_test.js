@@ -1,7 +1,7 @@
 var assert = require("assert");
 var arrayMap = require("../array-map");
 var processTheData = require("../process-the-data");
-var mappedPurchases = require("../mapped-purchases");
+var mappingPurchases = require("../mapping-purchases");
 
 
 // My maps.
@@ -568,11 +568,18 @@ describe("least popular category each week", function() {
 });
 
 // Mapped purchases.
-describe("mapping purchases", function(){
+describe("mapping purchases", function() {
 
-  it("should return a new line split array of the purchases", function(){
+  it("should return a new line split array of the purchases", function() {
 
-    assert.deepEqual(mappedPurchases.newLineSplit("./data-files/purchases.csv"));
-    })
+    var purchases = {
+      date: '01-Mar-2016',
+      item: 'Top Class Soy Mince',
+      quantity: 3,
+      cost: 11
+    }
+
+    assert.deepEqual(purchases,mappingPurchases.newLineSplit("./data-files/purchases.csv"));
+  })
 
 });
