@@ -1,5 +1,5 @@
 var assert = require("assert");
-var arrayMap = require("../array-map");
+var mappingTheWeeks = require("../array-map");
 var processTheData = require("../process-the-data");
 var mappingPurchases = require("../mapping-purchases");
 
@@ -84,10 +84,10 @@ describe("mapped products each week", function() {
       'Milk 1l': 43
     };
 
-    assert.deepEqual(weekOne, arrayMap.mappedWeeks("./data-files/week1.csv"));
-    assert.deepEqual(weekTwo, arrayMap.mappedWeeks("./data-files/week2.csv"));
-    assert.deepEqual(weekThree, arrayMap.mappedWeeks("./data-files/week3.csv"));
-    assert.deepEqual(weekFour, arrayMap.mappedWeeks("./data-files/week4.csv"));
+    assert.deepEqual(weekOne, mappingTheWeeks.mappedWeeks("./data-files/week1.csv"));
+    assert.deepEqual(weekTwo, mappingTheWeeks.mappedWeeks("./data-files/week2.csv"));
+    assert.deepEqual(weekThree, mappingTheWeeks.mappedWeeks("./data-files/week3.csv"));
+    assert.deepEqual(weekFour, mappingTheWeeks.mappedWeeks("./data-files/week4.csv"));
   })
 });
 
