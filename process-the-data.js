@@ -129,3 +129,10 @@ exports.leastCategory = function(listMap) {
   }
   return leastPopularCategory;
 };
+
+// Most profitable product.
+exports.mostProfitableProduct = function(){
+
+  
+
+}

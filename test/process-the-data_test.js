@@ -570,16 +570,38 @@ describe("least popular category each week", function() {
 // Mapped purchases.
 describe("mapping purchases", function() {
 
-  it("should return a new line split array of the purchases", function() {
+  it("should return a map of purchases", function() {
 
-    var purchases = {
-      date: '01-Mar-2016',
-      item: 'Top Class Soy Mince',
-      quantity: 3,
-      cost: 11
+    var purchasesMap = {
+      'Chakalaka Can': 676,
+      'Coke 500ml': 598.5,
+      'Cream Soda 500ml': 357,
+      'Fanta 500ml': 433.5,
+      'Gold Dish Vegetable Curry Can': 479,
+      'Imasi': 2238,
+      'Iwisa Pap 5kg': 1020,
+      'Milk 1l': 1061.5,
+      'Top Class Soy Mince': 808,
+      'Bananas - loose': 72,
+      'Apples - loose': 795,
+      'Mixed Sweets 5s': 2070,
+      'Shampoo 1 litre': 520,
+      'Soap Bar': 156,
+      'Bread': 1270,
+      'Rose (plastic)': 200,
+      'Heart Chocolates': 500,
+      'Valentine Cards': 40
     }
+    assert.deepEqual(purchasesMap,mappingPurchases.newLineSplit("./data-files/purchases.csv"));
+  })
 
-    assert.deepEqual(purchases,mappingPurchases.newLineSplit("./data-files/purchases.csv"));
+});
+
+describe("most profitable product", function(){
+
+  it("should return the most profitable product for week one", function(){
+
+    assert.equal(processTheData.mostProfitableProduct());
   })
 
 });

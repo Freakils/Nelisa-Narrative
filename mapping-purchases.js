@@ -47,7 +47,7 @@ exports.newLineSplit = function(filepath) {
                 })
               // })
             }
-            console.log(arrayWithIndexes);
+            // console.log(arrayWithIndexes);
 
             var purchasesMap = {};
 
@@ -57,13 +57,13 @@ exports.newLineSplit = function(filepath) {
               var cost = list.cost;
 
               if(purchasesMap[item] === undefined){
-                purchasesMap = 0;
+                purchasesMap[item] = 0;
               }
 
-              purchasesMap[item] += qty;
+              purchasesMap[item] += qty*cost;
             });
 
-            console.log(purchasesMap);
+            // console.log(purchasesMap);
             return purchasesMap;
 
 };
