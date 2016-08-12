@@ -599,9 +599,11 @@ describe("mapping purchases", function() {
 
 describe("most profitable product", function(){
 
-  it("should return the most profitable product for week one", function(){
+  it("combining the weeks for overall sold", function(){
 
     assert.equal(processTheData.mostProfitableProduct());
   })
 
 });
+
+describe("combinig the weeks for mo");
