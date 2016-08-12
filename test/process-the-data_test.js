@@ -1,5 +1,5 @@
 var assert = require("assert");
-var mappingTheWeeks = require("../array-map");
+var mappingTheWeeks = require("../mapping-the-weeks");
 var processTheData = require("../process-the-data");
 var mappingPurchases = require("../mapping-purchases");
 
