@@ -567,43 +567,182 @@ describe("least popular category each week", function() {
 
 });
 
-// Mapped purchases.
-describe("mapping purchases", function() {
+// Most Profitable product.
+var purchases = mappingPurchases.newLineSplit('./data-files/purchases.csv');
+var weeklyPurchases = mappingPurchases.weeklyPurchases(purchases, "week4");
 
-  it("should return a map of purchases", function() {
+describe("Most profitable product", function() {
 
-    var purchasesMap = {
-      'Chakalaka Can': 676,
-      'Coke 500ml': 598.5,
-      'Cream Soda 500ml': 357,
-      'Fanta 500ml': 433.5,
-      'Gold Dish Vegetable Curry Can': 479,
-      'Imasi': 2238,
-      'Iwisa Pap 5kg': 1020,
-      'Milk 1l': 1061.5,
-      'Top Class Soy Mince': 808,
-      'Bananas - loose': 72,
-      'Apples - loose': 795,
-      'Mixed Sweets 5s': 2070,
-      'Shampoo 1 litre': 520,
-      'Soap Bar': 156,
-      'Bread': 1270,
-      'Rose (plastic)': 200,
-      'Heart Chocolates': 500,
-      'Valentine Cards': 40
-    }
-    assert.deepEqual(purchasesMap,mappingPurchases.newLineSplit("./data-files/purchases.csv"));
-  })
+  it("should return the map of product and cost price for week 4", function() {
+
+    var result = mappingPurchases.weeklyPurchases(purchases, 'week4');
+
+    assert.deepEqual(result, {
+      'Chakalaka Can': [9, 7, 7],
+      'Bananas - loose': [1, 1],
+      'Apples - loose': [1.5, 1.5],
+      'Mixed Sweets 5s': [3],
+      Bread: [9, 11, 9],
+      'Coke 500ml': [3.5, 3.5],
+      'Cream Soda 500ml': [4.5, 4.5],
+      'Fanta 500ml': [4.5, 6.5, 4.5],
+      'Gold Dish Vegetable Curry Can': [5, 8.5, 5],
+      Imasi: [17, 17],
+      'Milk 1l': [7, 7],
+      'Top Class Soy Mince': [8, 8],
+      'Soap Bar': [3, 3, 3],
+      'Shampoo 1 litre': [20, 20],
+      'Iwisa Pap 5kg': [30, 20]
+    });
+  });
+
+  it('should return cost price map for week4', function() {
+
+    var result = mappingPurchases.costPrices(weeklyPurchases);
+
+    assert.deepEqual(result, {
+      'Apples - loose': 1.5,
+      'Bananas - loose': 1,
+      Bread: 9.67,
+      'Chakalaka Can': 7.67,
+      'Coke 500ml': 3.5,
+      'Cream Soda 500ml': 4.5,
+      'Fanta 500ml': 5.17,
+      'Gold Dish Vegetable Curry Can': 6.17,
+      Imasi: 17,
+      'Iwisa Pap 5kg': 25,
+      'Milk 1l': 7,
+      'Mixed Sweets 5s': 3,
+      'Shampoo 1 litre': 20,
+      'Soap Bar': 3,
+      'Top Class Soy Mince': 8
+    });
+  });
+
+  it('should return the total profit map', function() {
+
+    assert.deepEqual(mappingPurchases.totalProfit({
+      'Apples - loose': 1.5,
+      'Bananas - loose': 1,
+      Bread: 9.67,
+      'Chakalaka Can': 7.67,
+      'Coke 500ml': 3.5,
+      'Cream Soda 500ml': 4.5,
+      'Fanta 500ml': 5.17,
+      'Gold Dish Vegetable Curry Can': 6.17,
+      Amasi: 17,
+      'Iwisa Pap 5kg': 25,
+      'Milk 1l': 7,
+      'Mixed Sweets 5s': 3,
+      'Shampoo 1 litre': 20,
+      'Soap Bar': 3,
+      'Top Class Soy Mince': 8
+    }, {
+      'Milk 1l': 10,
+      Amasi: 25,
+      Bread: 12,
+      'Chakalaka Can': 10,
+      'Gold Dish Vegetable Curry Can': 9,
+      'Fanta 500ml': 6.5,
+      'Coke 500ml': 6.5,
+      'Cream Soda 500ml': 7.5,
+      'Iwisa Pap 5kg': 30,
+      'Top Class Soy Mince': 12,
+      'Shampoo 1 litre': 30,
+      'Soap Bar': 6,
+      'Bananas - loose': 2,
+      'Apples - loose': 2,
+      'Mixed Sweets 5s': 3
+    }, {
+      'Milk 1l': 41,
+      Amasi: 31,
+      Bread: 30,
+      'Chakalaka Can': 28,
+      'Gold Dish Vegetable Curry Can': 30,
+      'Fanta 500ml': 22,
+      'Coke 500ml': 42,
+      'Cream Soda 500ml': 19,
+      'Iwisa Pap 5kg': 15,
+      'Top Class Soy Mince': 39,
+      'Shampoo 1 litre': 10,
+      'Soap Bar': 19,
+      'Bananas - loose': 18,
+      'Apples - loose': 27,
+      'Mixed Sweets 5s': 28
+    }), {
+      Amasi: 248,
+      'Apples - loose': 13.5,
+      'Bananas - loose': 18,
+      Bread: 69.9,
+      'Chakalaka Can': 65.24,
+      'Coke 500ml': 126,
+      'Cream Soda 500ml': 57,
+      'Fanta 500ml': 29.26,
+      'Gold Dish Vegetable Curry Can': 84.9,
+      'Iwisa Pap 5kg': 75,
+      'Milk 1l': 123,
+      'Mixed Sweets 5s': 0,
+      'Shampoo 1 litre': 100,
+      'Soap Bar': 57,
+      'Top Class Soy Mince': 156
+    });
+  });
+
+  it('should return the most profitable product sold', function() {
+    assert.deepEqual(processTheData.mostProfitableProduct({
+      Amasi: 248,
+      'Apples - loose': 13.5,
+      'Bananas - loose': 18,
+      Bread: 69.9,
+      'Chakalaka Can': 65.24,
+      'Coke 500ml': 126,
+      'Cream Soda 500ml': 57,
+      'Fanta 500ml': 29.26,
+      'Gold Dish Vegetable Curry Can': 84.9,
+      'Iwisa Pap 5kg': 75,
+      'Milk 1l': 123,
+      'Mixed Sweets 5s': 0,
+      'Shampoo 1 litre': 100,
+      'Soap Bar': 57,
+      'Top Class Soy Mince': 156
+    }), {
+      description: 'Most Profitable Product',
+      product: 'Amasi',
+      profit: 248
+    });
+  });
 
 });
 
-describe("most profitable product", function(){
+// Most profitable category.
+describe("Most profitable category", function() {
 
-  it("combining the weeks for overall sold", function(){
+  it("shoul return a map of category sales", function() {
 
-    assert.equal(processTheData.mostProfitableProduct());
-  })
+    var week1Sales = {
+      'Milk 1l': 39,
+      'Imasi': 30,
+      'Bread': 45,
+      'Chakalaka Can': 23,
+      'Gold Dish Vegetable Curry Can': 17,
+      'Fanta 500ml': 33,
+      'Coke 500ml': 54,
+      'Cream Soda 500ml': 22,
+      'Iwisa Pap 5kg': 17,
+      'Top Class Soy Mince': 22,
+      'Shampoo 1 litre': 3,
+      'Soap Bar': 12,
+      'Bananas - loose': 47,
+      'Apples - loose': 36,
+      'Mixed Sweets 5s': 49
+    };
+
+    var popularWk1 = {
+      category: 'Soft Drinks',
+      qty: 109
+    };
+
+    assert.deepEqual(processTheData.categorySales(week1Sales), popularWk1);
+  });
 
 });
-
-describe("combinig the weeks for mo");
