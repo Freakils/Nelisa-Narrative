@@ -2,18 +2,18 @@
 exports.mostPopular = function(listMap) {
 
   var max = 0;
-  var mostPopProduct = {};
+    var mostPopProduct = {};
 
-  for (var key in listMap) {
+    for (var key in listMap) {
 
-    if (listMap[key] > max) {
-      max = listMap[key];
+      if (listMap[key] > max) {
+        max = listMap[key];
 
-      mostPopProduct = {
-        item: key,
-        qty: max
-      };
-    }
+        mostPopProduct = {
+          item: key,
+          qty: max
+        };
+      }
   }
 
   // console.log(mostPopProduct);
@@ -24,23 +24,22 @@ exports.mostPopular = function(listMap) {
 exports.leastPopular = function(listMap) {
 
   var min = Infinity;
-  var leastPopProduct = {};
+    var leastPopProduct = {};
 
-  for (var key in listMap) {
-    if (listMap[key] < min) {
-      min = listMap[key];
+    for (var key in listMap) {
+      if (listMap[key] < min) {
+        min = listMap[key];
 
-      leastPopProduct = {
-        item: key,
-        qty: min
-      };
+        leastPopProduct = {
+          item: key,
+          qty: min
+        };
+      }
     }
-  }
-  return leastPopProduct;
+    return leastPopProduct;
 };
 
 // most popular category.
-
 var productsCategories = {
   'Milk 1l': 'Dairy',
   'Imasi': 'Dairy',
@@ -98,7 +97,7 @@ exports.popularCategory = function(listMap) {
 // Least popular category.
 exports.leastCategory = function(listMap) {
 
-    var mappedCat = {};
+  var mappedCat = {};
 
     for (var item in listMap) {
       var category = productsCategories[item];
@@ -130,9 +129,28 @@ exports.leastCategory = function(listMap) {
     return leastPopularCategory;
 };
 
+// Most profitable category.
+exports.categorySales = function(productsCategories, weekly_sales) {
+
+  var categorySales = {};
+
+    for (var product in productsCategories) {
+      for (var products in weekly_sales) {
+        if (product === products) {
+          if (!categorySales.hasOwnProperty(productsCategories[product])) {
+            categorySales[productsCategories[product]] = weekly_sales[products];
+          } else {
+            categorySales[productsCategories[product]] += weekly_sales[products];
+          }
+        }
+      }
+    }
+    return categorySales;
+}
+
 // Most profitable product.
 exports.mostProfitableProduct = function(totalProfit) {
-    var profit = [];
+  var profit = [];
 
   for (var product in totalProfit) {
     profit.push(totalProfit[product]);
@@ -151,24 +169,4 @@ exports.mostProfitableProduct = function(totalProfit) {
   }
   // console.log(mostProfitableProduct);
   return mostProfitableProduct;
-}
-
-// Most profitable category.
-exports.categorySales = function(productsCategories, weekly_sales) {
-
-  var categorySales = {};
-
-  for (var product in productsCategories) {
-    for (var products in weekly_sales) {
-      if (product === products) {
-        if (!categorySales.hasOwnProperty(productsCategories[product])) {
-          categorySales[productsCategories[product]] = weekly_sales[products];
-        } else {
-          categorySales[productsCategories[product]] += weekly_sales[products];
-        }
-      }
-    }
-  }
-
-  return categorySales;
 }
