@@ -19,8 +19,8 @@ exports.mappedWeeks = function(filepath) {
     newList[i] = newList[i]
       .split(',')
       .splice(1);
-
-
+//
+//
     dataToArray.push({
 
       date: newList[i][0] + '-2016',

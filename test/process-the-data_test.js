@@ -688,12 +688,12 @@ describe("Most profitable product", function() {
     });
   });
 
-  it('should return the most profitable product sold', function() {
+  it('should return the most profitable product', function() {
     assert.deepEqual(processTheData.mostProfitableProduct({
-      Amasi: 248,
+      'Amasi': 248,
       'Apples - loose': 13.5,
       'Bananas - loose': 18,
-      Bread: 69.9,
+      'Bread': 69.9,
       'Chakalaka Can': 65.24,
       'Coke 500ml': 126,
       'Cream Soda 500ml': 57,
@@ -717,32 +717,54 @@ describe("Most profitable product", function() {
 // Most profitable category.
 describe("Most profitable category", function() {
 
-  it("shoul return a map of category sales", function() {
-
-    var week1Sales = {
-      'Milk 1l': 39,
-      'Imasi': 30,
-      'Bread': 45,
-      'Chakalaka Can': 23,
-      'Gold Dish Vegetable Curry Can': 17,
-      'Fanta 500ml': 33,
-      'Coke 500ml': 54,
-      'Cream Soda 500ml': 22,
-      'Iwisa Pap 5kg': 17,
-      'Top Class Soy Mince': 22,
-      'Shampoo 1 litre': 3,
-      'Soap Bar': 12,
-      'Bananas - loose': 47,
-      'Apples - loose': 36,
-      'Mixed Sweets 5s': 49
-    };
-
-    var popularWk1 = {
-      category: 'Soft Drinks',
-      qty: 109
-    };
-
-    assert.deepEqual(processTheData.categorySales(week1Sales), popularWk1);
-  });
+  it('should return a categories profit map', function() {
+      assert.deepEqual(products.getCatProfit(categoryMap, {
+        'Amasi': 248,
+        'Apples - loose': 13.5,
+        'Bananas - loose': 18,
+        'Bread': 69.9,
+        'Chakalaka Can': 65.24,
+        'Coke 500ml': 126,
+        'Cream Soda 500ml': 57,
+        'Fanta 500ml': 29.26,
+        'Gold Dish Vegetable Curry Can': 84.9,
+        'Iwisa Pap 5kg': 75,
+        'Milk 1l': 123,
+        'Mixed Sweets 5s': 0,
+        'Shampoo 1 litre': 100,
+        'Soap Bar': 57,
+        'Top Class Soy Mince': 156
+      }),
+      // {
+      //   ' Dairy': 123,
+      //   ' Fruit': 31.5,
+      //   ' Bakery': 69.9,
+      //   ' Canned Food': 150.14,
+      //   ' Soft Drinks': 212.26,
+      //   ' Starch': 231,
+      //   ' Sweets': 0,
+      //   ' Toiletries': 157
+      // });
+    });
 
 });
+
+
+//
+//   it('should return the most profitable category and the profit', function() {
+//     assert.deepEqual(products.getMostProfitableCategory({
+//       ' Dairy': 123,
+//       ' Fruit': 31.5,
+//       ' Bakery': 69.9,
+//       ' Canned Food': 150.14,
+//       ' Soft Drinks': 212.26,
+//       ' Starch': 231,
+//       ' Sweets': 0,
+//       ' Toiletries': 157
+//     }), {
+//       description: 'Most Profitable Category',
+//       cat: ' Starch',
+//       profit: 231
+//     });
+//   });
+// });

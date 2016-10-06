@@ -39,6 +39,30 @@ exports.leastPopular = function(listMap) {
     return leastPopProduct;
 };
 
+// Most profitable product.
+exports.mostProfitableProduct = function(totalProfit) {
+  var profit = [];
+
+  for (var product in totalProfit) {
+    profit.push(totalProfit[product]);
+  }
+
+  var mostProfit = Math.max.apply(null, profit);
+  //console.log(mostProfit);
+  for (product in totalProfit) {
+    if (totalProfit[product] === mostProfit) {
+      var mostProfitableProduct = {
+        description: "Most Profitable Product",
+        product: product,
+        profit: mostProfit
+      };
+    }
+  }
+  // console.log(mostProfitableProduct);
+  return mostProfitableProduct;
+}
+
+
 // most popular category.
 var productsCategories = {
   'Milk 1l': 'Dairy',
@@ -130,43 +154,10 @@ exports.leastCategory = function(listMap) {
 };
 
 // Most profitable category.
-exports.categorySales = function(productsCategories, weekly_sales) {
-
-  var categorySales = {};
-
-    for (var product in productsCategories) {
-      for (var products in weekly_sales) {
-        if (product === products) {
-          if (!categorySales.hasOwnProperty(productsCategories[product])) {
-            categorySales[productsCategories[product]] = weekly_sales[products];
-          } else {
-            categorySales[productsCategories[product]] += weekly_sales[products];
-          }
-        }
-      }
-    }
-    return categorySales;
-}
-
-// Most profitable product.
-exports.mostProfitableProduct = function(totalProfit) {
-  var profit = [];
-
-  for (var product in totalProfit) {
-    profit.push(totalProfit[product]);
-  }
-
-  var mostProfit = Math.max.apply(null, profit);
-  //console.log(mostProfit);
-  for (product in totalProfit) {
-    if (totalProfit[product] === mostProfit) {
-      var mostProfitableProduct = {
-        description: "Most Profitable Product",
-        product: product,
-        profit: mostProfit
-      };
-    }
-  }
-  // console.log(mostProfitableProduct);
-  return mostProfitableProduct;
-}
+// exports.getCatProfit = function(productsCategories, totalProfit) {
+//   var mappedProfCat = {};
+//
+//     for(var item in listMap){
+//
+//     }
+// }
