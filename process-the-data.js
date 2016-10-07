@@ -154,10 +154,80 @@ exports.leastCategory = function(listMap) {
 };
 
 // Most profitable category.
-// exports.getCatProfit = function(productsCategories, totalProfit) {
-//   var mappedProfCat = {};
+// exports.categoryProfitMap = function(listMap){
+//   var categoryProfMap = {};
 //
 //     for(var item in listMap){
-//
+//       var category = productsCategories[item];
+//         if(categoryProfMap[category] === undefined){
+//           categoryProfMap[category] = 0;
+//         }
+//         var categoryProfMap = listMap[item];
+//         categoryProfMap[category] = categoryProfMap[category] + categoryProf;
 //     }
+//     console.log(categoryProfMap);
+// }
+// var catProfitMap = {};
+//
+//   for (var product in profitMap){
+//     var category = categoryProfitMap[product];
+//     if (catProfitMap[category] === undefined){
+//       catProfitMap[category] = 0;
+//     }
+//     var catProfit = profitMap[product];
+//     catProfitMap[category] = catProfitMap[category] + catProfit;
+//   }
+//   //console.log(catProfitMap);
+//   var mostProfitableCategory = {};
+//     var max = 0;
+//
+//     for(var cat in catProfitMap) {
+//       var value = catProfitMap[cat];
+//       if(catProfitMap[cat] > max){
+//         max = catProfitMap[cat];
+//         mostProfitableCategory = {
+//           desc: "Most Profitable Category",
+//           category: cat,
+//           profitAmount: max
+//         }
+//       }
+//     }
+//   return mostProfitableCategory;
+// };
+
+
+
+// exports.getCatProfit = function(categories, totalProfit) {
+//
+//   var catProfit = {};
+//
+//   for (var product in categories) {
+//     for (var products in totalProfit) {
+//       if (product === products) {
+//         if (!catProfit.hasOwnProperty(categories[product])) {
+//           catProfit[categories[product]] = totalProfit[products];
+//         } else {
+//           catProfit[categories[product]] += totalProfit[products];
+//         }
+//       }
+//     }
+//   }
+//   return catProfit;
+// }
+// exports.getMostProfitableCategory = function(catProfit) {
+//   var maxProfit = 0;
+//   var mostProfitableCat = "";
+//
+//   for (var cat in catProfit) {
+//     if (catProfit[cat] > maxProfit) {
+//       maxProfit = catProfit[cat];
+//       mostProfitableCat = cat;
+//     }
+//   }
+//   var mostProfitableCategory = {
+//     description: "Most Profitable Category",
+//     cat: mostProfitableCat,
+//     profit: maxProfit
+//   }
+//   return mostProfitableCategory;
 // }
