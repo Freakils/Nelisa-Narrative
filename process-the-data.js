@@ -193,7 +193,7 @@ exports.leastCategory = function(listMap) {
 //       }
 //     }
 //   return mostProfitableCategory;
-// };
+// }
 
 
 
