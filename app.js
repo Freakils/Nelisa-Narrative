@@ -2,7 +2,7 @@ var fs = require('fs');
 var handlebars = require('handlebars');
 var mappingTheWeeks = require('./mapping-the-weeks');
 var processTheData = require('./process-the-data');
-// var source = fs.readFileSync('./index.handlebars', 'utf8');
+var mappingPurchases = require('./mapping-purchases');
 
 // var filepath = fs.readFileSync(path, 'utf8');
 
@@ -11,9 +11,18 @@ var weekOne = mappingTheWeeks.mappedWeeks('./data-files/week1.csv');
 // console.log(weekOne);
   var mostPopular = processTheData.mostPopular(weekOne);
   var leastPopular = processTheData.leastPopular(weekOne);
-    console.log(leastPopular);
 
-var inputCategories = 
+  var popularCategory = processTheData.popularCategory(weekOne);
+  var leastCategory = processTheData.leastCategory(weekOne);
+
+
+  var purchases = mappingPurchases.newLineSplit('./data-files/purchases.csv');
+    var weekFour = mappingTheWeeks.mappedWeeks('./data-files/week4.csv');
+    // console.log(purchases);
+    var weeklyPurchases = mappingPurchases.weeklyPurchases(purchases, 'weekFour');
+    console.log(weeklyPurchases);
+
+
 
 // //create a function that gets all my data
 //  exports.weeklyStats = function(week){

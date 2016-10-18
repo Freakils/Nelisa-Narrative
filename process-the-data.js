@@ -166,7 +166,7 @@ exports.mostProfitableCategory = function(listMap){
       var catProfit = listMap[item];
       mappedProfitCat[category] = mappedProfitCat[category] + catProfit;
     }
-    console.log(mappedProfitCat);
+    // console.log(mappedProfitCat);
 
     var mostProfitableCategory = {};
     var max = 0;
@@ -182,6 +182,6 @@ exports.mostProfitableCategory = function(listMap){
         }
       }
     }
-    console.log(mostProfitableCategory);
+    // console.log(mostProfitableCategory);
     return mostProfitableCategory;
 }

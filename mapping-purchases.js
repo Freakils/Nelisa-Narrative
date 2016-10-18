@@ -121,7 +121,7 @@ exports.weeklyPurchases = function(purchases, week) {
       // console.log(week);
           var purchasesList = [];
 
-          purchases[week].forEach(function(array) {
+          purchases['week'].forEach(function(array) {
           purchasesList.push([array[2], Number(array[4].replace(/R/,''))]);
           // Number(newList[i][3].replace(/R/, '')
             });
