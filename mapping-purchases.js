@@ -163,15 +163,15 @@ exports.costPrices = function(weeklyPurchases) {
         return costPrices;
 }
 
-exports.totalProfit = function(costPrices, selling_prices, weekly_sales) {
+exports.totalProfit = function(costPrices, sellingPrices, weeklySales) {
 //  console.log(selling_prices);
 
     var profitMap = {};
 
-      for (var product in selling_prices) {
+      for (var product in sellingPrices) {
         for (var products in costPrices) {
           if (product === products) {
-            profitMap[product] = (selling_prices[product] - costPrices[products])
+            profitMap[product] = (sellingPrices[product] - costPrices[products])
           }
         }
       }
@@ -179,9 +179,9 @@ exports.totalProfit = function(costPrices, selling_prices, weekly_sales) {
       var totalProfit = {};
 
       for (var product in profitMap) {
-        for (var products in weekly_sales) {
+        for (var products in weeklySales) {
           if (product === products) {
-            totalProfit[product] = Number((weekly_sales[products] * profitMap[product]).toFixed(2))
+            totalProfit[product] = Number((weeklySales[products] * profitMap[product]).toFixed(2))
           }
         }
       }
