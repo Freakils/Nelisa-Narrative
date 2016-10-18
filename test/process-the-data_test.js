@@ -582,12 +582,12 @@ describe("Most profitable product", function() {
       'Bananas - loose': [1, 1],
       'Apples - loose': [1.5, 1.5],
       'Mixed Sweets 5s': [3],
-      Bread: [9, 11, 9],
+      'Bread': [9, 11, 9],
       'Coke 500ml': [3.5, 3.5],
       'Cream Soda 500ml': [4.5, 4.5],
       'Fanta 500ml': [4.5, 6.5, 4.5],
       'Gold Dish Vegetable Curry Can': [5, 8.5, 5],
-      Imasi: [17, 17],
+      'Imasi': [17, 17],
       'Milk 1l': [7, 7],
       'Top Class Soy Mince': [8, 8],
       'Soap Bar': [3, 3, 3],
@@ -603,13 +603,13 @@ describe("Most profitable product", function() {
     assert.deepEqual(result, {
       'Apples - loose': 1.5,
       'Bananas - loose': 1,
-      Bread: 9.67,
+      'Bread': 9.67,
       'Chakalaka Can': 7.67,
       'Coke 500ml': 3.5,
       'Cream Soda 500ml': 4.5,
       'Fanta 500ml': 5.17,
       'Gold Dish Vegetable Curry Can': 6.17,
-      Imasi: 17,
+      'Imasi': 17,
       'Iwisa Pap 5kg': 25,
       'Milk 1l': 7,
       'Mixed Sweets 5s': 3,
@@ -624,13 +624,13 @@ describe("Most profitable product", function() {
     assert.deepEqual(mappingPurchases.totalProfit({
       'Apples - loose': 1.5,
       'Bananas - loose': 1,
-      Bread: 9.67,
+      'Bread': 9.67,
       'Chakalaka Can': 7.67,
       'Coke 500ml': 3.5,
       'Cream Soda 500ml': 4.5,
       'Fanta 500ml': 5.17,
       'Gold Dish Vegetable Curry Can': 6.17,
-      Amasi: 17,
+      'Amasi': 17,
       'Iwisa Pap 5kg': 25,
       'Milk 1l': 7,
       'Mixed Sweets 5s': 3,
@@ -639,8 +639,8 @@ describe("Most profitable product", function() {
       'Top Class Soy Mince': 8
     }, {
       'Milk 1l': 10,
-      Amasi: 25,
-      Bread: 12,
+      'Amasi': 25,
+      'Bread': 12,
       'Chakalaka Can': 10,
       'Gold Dish Vegetable Curry Can': 9,
       'Fanta 500ml': 6.5,
@@ -655,8 +655,8 @@ describe("Most profitable product", function() {
       'Mixed Sweets 5s': 3
     }, {
       'Milk 1l': 41,
-      Amasi: 31,
-      Bread: 30,
+      'Amasi': 31,
+      'Bread': 30,
       'Chakalaka Can': 28,
       'Gold Dish Vegetable Curry Can': 30,
       'Fanta 500ml': 22,
@@ -670,10 +670,10 @@ describe("Most profitable product", function() {
       'Apples - loose': 27,
       'Mixed Sweets 5s': 28
     }), {
-      Amasi: 248,
+      'Amasi': 248,
       'Apples - loose': 13.5,
       'Bananas - loose': 18,
-      Bread: 69.9,
+      'Bread': 69.9,
       'Chakalaka Can': 65.24,
       'Coke 500ml': 126,
       'Cream Soda 500ml': 57,
@@ -738,15 +738,15 @@ describe('most profitable category', function() {
     };
 
     assert.deepEqual(processTheData.mostProfitableCategory(weekOne, {
-        Dairy: 69,
-        Bakery: 45,
+        'Dairy': 69,
+        'Bakery': 45,
         'Canned Foods': 40,
         'Soft Drinks': 109,
-        Starch: 17,
-        Meat: 22,
-        Hygiene: 15,
-        Fruits: 83,
-        Sweets: 49
+        'Starch': 17,
+        'Meat': 22,
+        'Hygiene': 15,
+        'Fruits': 83,
+        'Sweets': 49
       }), {
         description: 'Most Profitable Category',
         category: 'Soft Drinks',

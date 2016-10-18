@@ -17,34 +17,15 @@ var weekOne = mappingTheWeeks.mappedWeeks('./data-files/week1.csv');
 
 
   var purchases = mappingPurchases.newLineSplit('./data-files/purchases.csv');
-    var weekFour = mappingTheWeeks.mappedWeeks('./data-files/week4.csv');
     // console.log(purchases);
-    var weeklyPurchases = mappingPurchases.weeklyPurchases(purchases, 'weekFour');
-    console.log(weeklyPurchases);
+    var weeklyPurchases = mappingPurchases.weeklyPurchases(purchases, 'week4');
+    // var costPrice = mappingPurchases.costPrice()
+    console.log(mostPopular);
 
 
 
-// //create a function that gets all my data
-//  exports.weeklyStats = function(week){
-//    //get the data
-//   var inputSales = products.getSalesList('./files/' + week +'.csv');
-//
-//   var weeklySales = products.getWeeklySales(inputSales);
-//   var mostPopularProduct = products.getMostPopularProduct(weeklySales);
-//   var leastPopularProduct = products.getLeastPopularProduct(weeklySales);
-//
-//   var inputCategories = products.getCategories('./files/categories.csv')
-//   var catSales = products.getCatSales(inputCategories, weeklySales);
-//   var mostPopularCategory = products.getMostPopularCategory(catSales);
-//   var leastPopularCategory = products.getLeastPopularCategory(catSales);
-//
-//   var purchases = products.getPurchases('./files/purchases.csv');
-//
-//   var weeklyPurchases = products.getWeeklyPurchases(purchases, week);
-//   var costPrices = products.getCostPrices(weeklyPurchases);
-//   var totalProfit = products.getTotalProfit(costPrices, sellingPrices, weeklySales);
-//   var mostProfitableProduct = products.getMostProfitableProduct(totalProfit);
-//   var catProfit = products.getCatProfit(categories ,totalProfit);
+// rofit = products.getCatProfit(categories ,totalProfit);
+
 //   var mostProfitableCategory = products.getMostProfitableCategory(catProfit);
 //
 //   //introducing my handlebar template
